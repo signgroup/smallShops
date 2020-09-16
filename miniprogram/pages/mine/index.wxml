@@ -1,0 +1,63 @@
+<view class="screen">
+	<!-- 登录开始 -->
+	<view class="head-bg-box ">
+		<view class="head-bg "></view>
+		<view class="login-box slide_up" style="top:{{statusBarHeight+58}}px">
+			<view class="head-portrait">
+				<!-- <image src="{{avatarUrl}}"></image> -->
+				<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+			</view>
+			<text class="nickname" >{{logged?userInfo.nickName:'登录'}}</text>
+		</view>
+	</view>
+	<view></view>
+	<!-- 登录结束 -->
+	<view class="card-menu">
+		<view class="menu-item arrow" data-name="visitor" bindtap="handelMenu">
+			<view class="content">
+				<image src="https://preview.cloud.189.cn/image/imageAction?param=DA25EEE5C366B877635395BA5A70F58D5A5220B4A39B83E5FBAB57CF014D7836CB91C013407F0F8A18D011005423A1828AD7DEE08578B972E0732A2D615A0AF4F71DF2C139B300AEF28C5A2EEF93AF0E87426A7E34E8567D8028BC9E"></image>
+				<text>发布商店二维码</text>
+			</view>
+		</view>
+		<view class="menu-item " data-name="appreciation">
+			<view class="content">
+				<image src="https://preview.cloud.189.cn/image/imageAction?param=AD55B8F9FCEBF285258457F047AB1C1367F1226F06D7659420E9DBAF0D4948F4E0539B192DD89E74D2C541CDBD708536575A10F96BCBB8D6770AB6BDD317301AB4D54B4CCA47EC434DF490566E75D007C63BFDFBBE81D89C41EA6952"></image>
+				<text>刷新展示</text>
+			</view>
+			<view class="refresh">
+				<button wx:if="{{refreshStatus}}" class="btn-refresh" plain type="default" loading="{{refreshLoading}}" size="mini" :disabled="refreshDisabled" bindtap="handelRefresh">刷新</button> 
+				<view class="count-down" wx:else>
+					{{countdown}}
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="card-menu">
+		<view class="menu-item arrow" data-name="appreciation" bindtap="handelMenu">
+			<view class="content">
+				<image src="https://preview.cloud.189.cn/image/imageAction?param=16026618A1933CD87A9DE03AEFC56C0856603CED6D97A50592245FE699A9583B40C81731DC26A377F25BD4E1BEDC7634F0BD5AE6A4FFD3413EC63971E1FF2175594D15FFC6445F225E87FBF4B0F87376FC302F7BD701F6BF06AEC05F"></image>
+				<text>赞赏</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="card-menu" wx:if="{{logged}}">
+		<view class="menu-item arrow" bindtap="loginOut">
+			<view class="content">
+				<image src="https://preview.cloud.189.cn/image/imageAction?param=EB0EB91EEC2FC1A3086475FA952D1EE793559A2AF9F2FED557B543FDDDF541AA0424D36DA2CFB7BC597103D31C52C312F560510FF6F27978D5BE3053B21A84459E915B7F5D631EC5D1027EF89A72CD37CABE0AD9222BB7AA67016E71"></image>
+				<text>退出</text>
+			</view>
+		</view>
+
+		<view class="menu-item arrow" data-name="manage" bindtap="handelMenu" wx:if="{{openid==='ooWgd5DUlhyvvI51GjoBukzgYxAs'}}">
+			<view class="content">
+				<image src="https://preview.cloud.189.cn/image/imageAction?param=884D8AA6E777FF44C7E5015D7740EFAE05DE2E181B09515EF04B573CEFC917017F63950C4011149BD46C54D7D216FF390827356A5962E71139F9FFFCECAF631F2B548CD59E1EC10B4E313B61225C22D2A5284E12A46A5D960928DEA8"></image>
+				<text>管理</text>
+			</view>
+		</view>
+	</view>
+	<view class="circle"></view>
+</view>
+
+<loading hidden="{{hiddenLoading}}" />

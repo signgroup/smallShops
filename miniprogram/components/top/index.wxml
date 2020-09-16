@@ -1,0 +1,3 @@
+<!--components/top/index.wxml-->
+ <!-- 返回顶部 -->
+     <view class="top" wx:if="{{topStatus}}" bindtap="goTop"></view>

@@ -1,0 +1,20 @@
+<view class="container">
+	<!--header-->
+	<view class="search-bar">
+		<icon class="icon-search" type="search" size="22"></icon>
+		<input type="text" class="search-bar-input" placeholder="请输入搜索内容"  value="{{searchVal}}" confirm-type="search" bindinput='searchInput' bindconfirm='btnSearch' />
+	</view>
+	<view class="product-list">
+		<view class="product-item" wx:for="{{shopData}}" wx-for:item="item" wx:for-index="index" wx:key="_id">
+			<image class="product-image" lazy-load mode="aspectFill" src="{{item.cloud}}"></image>
+			<view class="product-text">
+				<!-- <text class="ellipsis-1 product-title">{{item.title}}</text> -->
+				<rich-text  class="ellipsis-1 product-title" nodes="{{item.title}}"></rich-text>
+				<text class="product-time">{{item.cycleTime}}</text>
+			</view>
+		</view>
+	</view>
+	<!-- 返回顶部 -->
+	<top topStatus="{{topStatus}}" />
+</view>
+<loading hidden="{{hiddenLoading}}" />

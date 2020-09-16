@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "小商店管理",
+  "usingComponents": {
+    "swipe-action": "./../../components/swipe-action",
+    "top": "./../../components/top"
+  }
+}

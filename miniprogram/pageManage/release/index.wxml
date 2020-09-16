@@ -1,0 +1,24 @@
+<view class="container">
+	<!--
+   注: 1、设置uncloseable为true时点击按钮不能关闭,必须联合toggle来实现
+       2、如果传递action的话必须传递width来设置每个按钮的宽度
+ -->
+	<swipe-action class="swipe-action" 
+	actions="{{actions}}" toggle="{{toggle}}" unclosable="{{true}}"
+	 bindchange="handlerCloseButton" wx:for="{{shopData}}" wx:key="_id" params="{{item}}">
+		<view slot="content">
+			<view class="list-item">
+				<image src="{{item.cloud}}" class="item-img"></image>
+				<view class="item-box">
+					<view class="ellipsis-1 item-title">{{item.title}}</view>
+					<view class="item-time">{{item.cycleTime}}</view>
+				</view>
+			</view>
+		</view>
+	</swipe-action>
+
+	<!-- 返回顶部 -->
+	<top topStatus="{{topStatus}}" />
+</view>
+
+<loading hidden="{{hiddenLoading}}" />

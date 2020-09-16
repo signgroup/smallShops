@@ -1,0 +1,27 @@
+/* components/top/index.wxss */
+
+.top {
+     width: 140rpx;
+     position: fixed;
+     right: 10rpx;
+     bottom: 10rpx;
+     background-image: url("http://13s.top/weimage/wxapp/rocket_up.png");
+     /*background-size:424px 156px;*/
+     background-size: auto 248rpx;
+     height: 226rpx;
+     -webkit-transform-style: preserve-3d;
+     transform-style: preserve-3d;
+     animation: mlfly 0.3s steps(5, start) 0.5s infinite alternate;
+     /*//这里的3是210/70得来的。*/
+     z-index: 999;
+}
+
+@keyframes mlfly {
+     0% {
+          background-position: 0 0;
+     }
+
+     100% {
+          background-position: -740rpx 0;
+     }
+}

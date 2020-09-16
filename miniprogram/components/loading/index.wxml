@@ -1,0 +1,216 @@
+<view class="loaded  {{hidden?'fade':''}}" style=" background: linear-gradient(to left bottom, hsl({{randomNum.leftNum}}, 100%, 85%) 0%,hsl({{randomNum.rightNum}}, 100%, 85%) 100%)">
+	<view class="loaders">
+		<view class="loader" wx:if="{{loadingIndex===0}}">
+			<view class="loader-inner ball-pulse">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader"  wx:elif="{{loadingIndex===1}}">
+			<view class="loader-inner ball-grid-pulse">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===2}}">
+			<view class="loader-inner ball-clip-rotate">
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===3}}">
+			<view class="loader-inner ball-clip-rotate-pulse">
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===4}}">
+			<view class="loader-inner square-spin">
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===5}}">
+			<view class="loader-inner ball-clip-rotate-multiple">
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===6}}">
+			<view class="loader-inner ball-pulse-rise">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===7}}">
+			<view class="loader-inner ball-rotate">
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===8}}">
+			<view class="loader-inner cube-transition">
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===9}}">
+			<view class="loader-inner ball-zig-zag">
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view class="loader" wx:elif="{{loadingIndex===10}}">
+			<view class="loader-inner ball-zig-zag-deflect">
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===11}}">
+			<view class="loader-inner ball-triangle-path">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===12}}">
+			<view class="loader-inner ball-scale">
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===13}}">
+			<view class="loader-inner line-scale">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===14}}">
+			<view class="loader-inner line-scale-party">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===15}}">
+			<view class="loader-inner ball-scale-multiple">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===16}}">
+			<view class="loader-inner ball-pulse-sync">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===17}}">
+			<view class="loader-inner ball-beat">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===18}}">
+			<view class="loader-inner line-scale-pulse-out">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===19}}">
+			<view class="loader-inner line-scale-pulse-out-rapid">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===20}}">
+			<view class="loader-inner ball-scale-ripple">
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===21}}">
+			<view class="loader-inner ball-scale-ripple-multiple">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===22}}">
+			<view class="loader-inner ball-spin-fade-loader">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===23}}">
+			<view class="loader-inner line-spin-fade-loader">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===24}}">
+			<view class="loader-inner triangle-skew-spin">
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===25}}">
+			<view class="loader-inner pacman">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===26}}">
+			<view class="loader-inner ball-grid-beat">
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+				<view class="element"></view>
+			</view>
+		</view>
+		<view  class="loader" wx:elif="{{loadingIndex===27}}">
+			<view class="loader-inner semi-circle-spin">
+				<view class="element"></view>
+			</view>
+		</view>
+
+
+	</view>
+</view>

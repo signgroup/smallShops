@@ -1,0 +1,50 @@
+{
+     "pages": [
+          "pages/home/index",
+          "pages/mine/index"
+     ],
+     "subpackages": [{
+          "root": "pageMine",
+          "name": "pack1",
+          "pages": [
+               "release/index"
+          ]
+     },{
+          "root": "pageManage",
+          "name": "pack2",
+          "pages": [
+               "release/index"
+          ]
+     }],
+     "tabBar": {
+          "color": "#222",
+          "selectedColor": "#f85c43",
+          "borderStyle": "black",
+          "backgroundColor": "#fff",
+          "list": [{
+                    "pagePath": "pages/home/index",
+                    "text": "首页",
+                    "iconPath": "images/tabbar/home.png",
+                    "selectedIconPath": "images/tabbar/home_cur.png"
+               },
+               {
+                    "pagePath": "pages/mine/index",
+                    "text": "我的",
+                    "iconPath": "images/tabbar/mine.png",
+                    "selectedIconPath": "images/tabbar/mine_cur.png"
+               }
+          ]
+     },
+     "window": {
+          "navigationBarTextStyle": "black",
+          "navigationBarTitleText": "",
+          "navigationBarBackgroundColor": "#fff",
+          "enablePullDownRefresh": true,
+          "backgroundColor": "#fff"
+     },
+     "usingComponents": {
+          "loading": "components/loading/index"
+     },
+     "sitemapLocation": "sitemap.json",
+     "style": "v2"
+}

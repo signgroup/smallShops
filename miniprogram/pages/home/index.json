@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "top": "./../../components/top"
+  },
+  "navigationBarTitleText": "小商店大全"
+}
