@@ -1,0 +1,62 @@
+<wxs src='./filter.wxs' module="filter"></wxs>
+
+<view class="container">
+     <!-- tab导航栏 -->
+     <!-- scroll-left属性可以控制滚动条位置 -->
+     <!-- scroll-with-animation滚动添加动画过渡 -->
+     <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+          <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+               <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">
+                    {{navItem.text}}</view>
+          </block>
+     </scroll-view>
+     <!-- 页面内容 -->
+     <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+          <swiper-item class="tab-content">
+               <scroll-view scroll-y="true" class="scroll-view-box" bindscrolltolower="allLoadMore"
+                    scroll-with-animation refresher-enabled="{{true}}" refresher-threshold="{{80}}"
+                    refresher-default-style="black" refresher-background="#fff" refresher-triggered="{{triggered}}"
+                    bindrefresherrefresh="onAllRefresh">
+                    <view class="dynamic">
+                         <view class="dynamic-item" wx:for="{{sponsorData}}" wx:key="_id">
+                              <view class="dynamic-avatar">
+                                   <image class="avatar" src="{{item.userInfo.avatarUrl}}" mode="aspectFill" />
+                              </view>
+                              <view class="dynamic-text {{item.color}}">
+                                   <view class="dynamic-text-l">
+                                        <text class="d-nick-name ellipsis-1">{{item.userInfo.nickName}}</text>
+                                        <text class="d-date-time">{{item.datatime}}</text>
+                                   </view>
+                                   <view class="dynamic-text-r">
+                                        赞赏<text>￥{{item.money}}</text>
+                                   </view>
+                              </view>
+                         </view>
+                    </view>
+               </scroll-view>
+          </swiper-item>
+          <swiper-item class="tab-content">
+               <scroll-view scroll-y="true" class="scroll-view-box" bindscrolltolower="allLoadMore"
+                    scroll-with-animation refresher-enabled="{{true}}" refresher-threshold="{{80}}"
+                    refresher-default-style="black" refresher-background="#fff" refresher-triggered="{{triggered}}"
+                    bindrefresherrefresh="onAllRefresh">
+                    <view class="flex-row" wx:for="{{100}}" wx:key="item">
+                         <view class="ranking">
+                              <!-- <rich-text nodes="{{filter.status(item+1)}}" bindtap="tap" /> -->
+                         </view>
+                         <image class="avatar" src="http://iph.href.lu/200x200?fg=666666&bg=cccccc" mode="aspectFill" />
+                         <view class="flex-row-text">
+                              <text class="nick-name">排行榜</text>
+                              <text class="date-time">2020-09-17 16:01:33</text>
+                         </view>
+                         <view class="price">
+                              赞赏<text>￥10</text>
+                         </view>
+                    </view>
+               </scroll-view>
+
+          </swiper-item>
+     </swiper>
+
+</view>
+<loading hidden="{{hiddenLoading}}" />

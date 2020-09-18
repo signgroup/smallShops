@@ -1,0 +1,166 @@
+page {
+  background-color: #fbf9fe;
+}
+
+.container {
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+
+.header {
+  width: 100%;
+  height: 320rpx;
+  border-radius: 50%;
+  background-color: #d55a4a;
+  margin-top: -160rpx;
+  position: relative;
+}
+
+.header .group {
+  width: 100%;
+  position: absolute;
+  bottom: -232rpx;
+  text-align: center;
+}
+
+.header image {
+  width: 176rpx;
+  height: 176rpx;
+  border-radius: 50%;
+}
+
+.header .name {
+  width: 100%;
+  display: inline-block;
+  margin-top: 30rpx;
+  color: #4e5b65;
+}
+.header .leading {
+  width: 100%;
+  display: inline-block;
+  margin-top: 30rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+
+.ranking {
+  border-radius: 30rpx 0 0 30rpx;
+  background-color: #d55a4a;
+  position: absolute;
+  right: 0;
+  bottom: -170rpx;
+  color: #fff;
+  padding: 6rpx 20rpx;
+  font-size: 24rpx;
+  transform: translateX(136rpx);
+  animation: moveX .3s linear .6s 1 forwards;
+}
+
+@keyframes moveX {
+  from {
+    transform: translateX(136rpx);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.line {
+  display: block;
+  width: 600rpx;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #dddddd;
+  margin-top: 300rpx;
+  margin-bottom: 100rpx;
+}
+
+.price-list {
+  margin-top: 20rpx;
+  padding: 0 15rpx;
+  text-align: center;
+  flex-direction: row;
+}
+
+.price-list .item {
+  float: left;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+  width: 220rpx;
+}
+
+.price-list .price-box {
+  width: 100%;
+  height: 100rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #d55a4a;
+  text-align: center;
+}
+
+.price-list .price-box em {
+  line-height: 100rpx;
+  color: #d55a4a;
+  font-size: 30rpx;
+}
+
+.price-list .price-box .price {
+  font-size: 50rpx;
+  display: inline-block;
+}
+
+.price-list .price-box.active {
+  background-color: #d55a4a;
+}
+
+.price-list .price-box.active em {
+  color: #fff;
+  background-color: #d55a4a;
+}
+
+.sponsor-text {
+  text-align: center;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.footer {
+  position: fixed;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #666;
+  font-size: 24rpx;
+}
+
+.footer .text {
+  text-align: center;
+}
+
+.sponsor {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90rpx;
+}
+
+.avatar {
+  margin-top: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 10rpx;
+  box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.avatar:last-child {
+  margin-right: 0;
+}
+
+.avatar image {
+  height: 100%;
+}

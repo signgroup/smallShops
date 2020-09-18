@@ -1,0 +1,246 @@
+/**index.wxss**/
+page {
+     width: 100%;
+     height: 100%;
+}
+
+.container {
+     width: 100%;
+     height: 100%;
+
+}
+
+.nav {
+     height: 80rpx;
+     width: 100%;
+     box-sizing: border-box;
+     overflow: hidden;
+     line-height: 80rpx;
+     background: #f7f7f7;
+     font-size: 16px;
+     white-space: nowrap;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 99;
+}
+
+.nav-item {
+     width: 50%;
+     display: inline-block;
+     text-align: center;
+     position: relative;
+     background-color: #fff;
+}
+
+.nav-item.active {
+     color: red;
+}
+
+.nav-item.active::after {
+     content: '';
+     display: block;
+     width: 60rpx;
+     height: 6rpx;
+     background-color: #FF4500;
+     position: absolute;
+     left: 50%;
+     bottom: 0;
+     transform: translateX(-50%);
+}
+
+.tab-box {
+     width: 100%;
+     padding-top: 80rpx;
+     height: 100%;
+     box-sizing: border-box;
+}
+
+.scroll-view-box{height: 100%;}
+
+.flex-row {
+     display: flex;
+     align-items: center;
+     padding: 8rpx 30rpx;
+     background-color: #fff;
+     border-bottom: 1rpx solid #eee;
+     margin-top: 20rpx;
+}
+
+.avatar {
+     width: 120rpx;
+     height: 120rpx;
+     border-radius: 50%;
+     background-color: #eee;
+
+}
+
+.price {
+     width: 80rpx;
+     text-align: right;
+     color: #666;
+     font-size: 24rpx;
+}
+
+.price text {
+     color: #FF4500;
+     font-size: 32rpx;
+}
+
+.flex-row-text {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     padding: 20rpx;
+}
+
+.nick-name {
+     height: 42rpx;
+     color: #333;
+     font-size: 32rpx;
+}
+
+.date-time {
+     color: #999;
+     font-size: 24rpx;
+     margin-top: 20rpx;
+}
+
+.ranking {
+     width: 80rpx;
+     height: 80rpx;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+}
+
+.ranking rich-text {
+     width: 70%;
+     height: 70%;
+     text-align: center;
+     font-family: fantasy;
+}
+
+.dynamic {
+     background-color: #fff;
+     padding: 20rpx 30rpx;
+     margin-top: 20rpx;
+}
+
+.dynamic-item {
+     width: 100%;
+     position: relative;
+     display: flex;
+     margin-bottom: 20rpx;
+}
+
+.dynamic-avatar {
+     margin-right: 20rpx;
+}
+
+.dynamic-avatar::after {
+     content: '';
+     display: block;
+     width: 1rpx;
+     height: 100%;
+     position: absolute;
+     background-color: #eee;
+     top: 40rpx;
+     left: 30rpx;
+     z-index: 1;
+
+}
+
+.dynamic-item:last-child .dynamic-avatar::after {
+     opacity: 0;
+}
+
+.dynamic-avatar .avatar {
+     width: 60rpx;
+     height: 60rpx;
+     z-index: 10;
+     position: relative;
+     background-color: #eee;
+
+}
+
+.dynamic-text {
+     width: 100%;
+     box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, .1);
+     position: relative;
+     border-radius: 8rpx;
+     padding: 20rpx;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+.dynamic-text-l {
+     display: flex;
+     flex-direction: column;
+}
+
+.dynamic-text-r {
+     font-size: 24rpx;
+     display: flex;
+     flex-direction: column;
+     text-align: right;
+}
+
+.dynamic-text-r text {
+     font-size: 32rpx;
+}
+
+.dynamic-text::before {
+     content: "";
+     border-width: 12rpx;
+     display: block;
+     width: 0;
+     height: 0;
+     border-color: transparent;
+     border-style: solid;
+     position: absolute;
+     bottom: 50%;
+     transform: translateY(-100%);
+     left: -12rpx;
+     border-left-width: 0;
+}
+
+
+.dynamic-text .d-nick-name {
+     font-size: 32rpx;
+     height: 42rpx;
+}
+
+.dynamic-text .d-date-time {
+     font-size: 24rpx;
+     margin-top: 20rpx;
+}
+
+.dynamic-color1 {
+     background-color: rgb(253, 246, 236);
+     color: #E6A23C;
+}
+
+.dynamic-color1::before {
+     border-right-color: rgb(253, 246, 236);
+}
+
+.dynamic-color2 {
+     background-color: rgb(240, 249, 235);
+     color: #67C23A;
+}
+
+.dynamic-color2::before {
+     border-right-color: rgb(240, 249, 235);
+}
+
+.dynamic-color3 {
+     background-color: rgb(254, 240, 240);
+     color: #F56C6C;
+}
+
+.dynamic-color3::before {
+     border-right-color: rgb(254, 240, 240);
+}

@@ -1,0 +1,22 @@
+function status(id) {
+     var str = ""
+     switch (id) {
+          case 1:
+               str = '<img src="https://preview.cloud.189.cn/image/imageAction?param=EEC60AC6FC852B1BE64CBCA4A0260205CE745E641518F3B01F63A6C1F58C4981E50651BB5A92D53F4FE76C0964FCB6AE97AC090A92FAF5B5A90245FCCB1F6C98FB819C865E5566C897C97BB06AC4F23DE31E92DC9C725008D88156CA" style="width:100%;height:100%" />'
+               break;
+          case 2:
+               str = '<img src="https://preview.cloud.189.cn/image/imageAction?param=8F9A69AB78F3CC1801FE69F9E21A524B6FC21C84A8E45D71F690B4F5762D91B4B919D77086EF508EA4EAEE17E584DC6286C0D3C188A4E15C48659E4BB63325F70D3FDD9A4806A76F21258FF441CFC51F262E1783721BC4E10FAB112F" style="width:100%;height:100%" />'
+               break;
+          case 3:
+               str = '<img src="https://preview.cloud.189.cn/image/imageAction?param=F3CB069403C97020089879F446FA5CA280766490B57E5A1597D0AE1706A0E9A910436DF414CC45A09AF73EEE2324556367D5EA40552D99A2496747BA1F7895E63681CCD6DD3C9DC7065172A4F0540E1C6A136102B218980DC9F3AAB6" style="width:100%;height:100%" />'
+               break;
+          default:
+               str = '<span>' + id + '</span>'
+               break;
+     }
+     return str;
+}
+
+module.exports = {
+     status: status
+}

@@ -313,20 +313,18 @@ Page({
     let {
       name
     } = e.currentTarget.dataset
+    if (!this.data.logged) {
+      wx.showToast({
+        icon: "none",
+        title: '请登录后查看'
+      })
+      return
+    }
     if (name === "visitor") {
-      console.log(this.data.logged)
-      if (this.data.logged) {
-        this.getBlacklist()
-      } else {
-        wx.showToast({
-          icon: "none",
-          title: '请登录后查看',
-        })
-      }
+      this.getBlacklist()
     } else if (name === 'appreciation') {
-      wx.previewImage({
-        urls: ['https://preview.cloud.189.cn/image/imageAction?param=E05384FB240D7626A0BDC44D6F3599E92F2A388BF532C9DEFF7802BF8B2AE57819DBFB45585D290230CEF49CB9A6EFE4A6201A3533F28329F5218A38769DC7280E49D30D68ED20638D23C60477781698203D0CC9D99413781FD28A95'],
-        current: 'https://preview.cloud.189.cn/image/imageAction?param=E05384FB240D7626A0BDC44D6F3599E92F2A388BF532C9DEFF7802BF8B2AE57819DBFB45585D290230CEF49CB9A6EFE4A6201A3533F28329F5218A38769DC7280E49D30D68ED20638D23C60477781698203D0CC9D99413781FD28A95' // 当前显示图片的http链接      
+      wx.navigateTo({
+        url: "./../../pageSponsor/index/index"
       })
     } else if (name === 'manage') {
       wx.navigateTo({

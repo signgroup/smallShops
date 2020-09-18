@@ -1,0 +1,38 @@
+<view class="container">
+
+	<!-- 头部 -->
+	<view class="header">
+		<view class="group">
+			<image src="{{logo}}"  mode="aspectFill"/>
+			<text class="name">{{title}}</text>
+			<text class="leading">赞赏是最好的支持</text>
+		</view>
+		<navigator class="ranking"  url="./../ranking/index">
+			<text>赞赏记录</text>
+		</navigator>
+	</view>
+
+	<!-- 分割线 -->
+	<view class="line"></view>
+
+	<!-- 金额列表 -->
+	<view class="sponsor-text">
+		<text>赞赏金额</text>
+	</view>
+	<view class="price-list">
+		<view class="item" wx:for="{{prices}}" wx:key="item" data-money="{{item}}" bindtap="requestPayment">
+			<view class="price-box {{selected==item?'active':''}}">
+				<em><text class="price">{{item}}</text> 元</em>
+			</view>
+		</view>
+	</view>
+
+	<view class="footer">
+		<view class="text"><text>收到{{total}}次赞赏</text></view>
+		<view class="sponsor">
+			<view class="avatar" wx:for="{{sponsorData}}" wx:key="_id">
+				<image src="{{item.userInfo.avatarUrl}}" mode="aspectFill" />
+			</view>
+		</view>
+	</view>
+</view>
