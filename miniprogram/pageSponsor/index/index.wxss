@@ -51,7 +51,7 @@ page {
   right: 0;
   bottom: -170rpx;
   color: #fff;
-  padding: 6rpx 20rpx;
+  padding: 10rpx 20rpx;
   font-size: 24rpx;
   transform: translateX(136rpx);
   animation: moveX .3s linear .6s 1 forwards;

@@ -1,6 +1,6 @@
 /*
-* touch事件判断方式
-*/
+ * touch事件判断方式
+ */
 function swipeDirection(x1, x2, y1, y2) {
   return Math.abs(x1 - x2) >=
     Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
@@ -26,9 +26,9 @@ Component({
       type: Number,
       value: 160
     },
-    params:{
-      type:Object,
-      value:{}
+    params: {
+      type: Object,
+      value: {}
     }
   },
   options: {
@@ -48,12 +48,12 @@ Component({
       pageX: 0,
       pageY: 0
     },
-    isShowBtn:false
+    isShowBtn: false
   },
   methods: {
     //阻止事件冒泡
-    loop() { },
-     updateButtonSize() {
+    loop() {},
+    updateButtonSize() {
       const actions = this.data.actions;
       if (actions.length > 0) {
         const query = wx.createSelectorQuery().in(this);
@@ -112,7 +112,7 @@ Component({
           pageY: touches.pageY - start.pageY
         }
         if (Math.abs(spacing.pageX) >= 40 && direction === "Left") {
-          spacing.pageX = spacing.pageX < 0 ? - this.data.limitMove : this.data.limitMove;
+          spacing.pageX = spacing.pageX < 0 ? -this.data.limitMove : this.data.limitMove;
           this.setData({
             isShowBtn: true
           })
@@ -131,13 +131,16 @@ Component({
       const dataset = event.currentTarget.dataset;
       this.triggerEvent('change', {
         index: dataset.index,
-        item:this.data.params
+        item: this.data.params
       })
     },
     closeButtonGroup() {
       this.setData({
-        'position': { pageX: 0, pageY: 0 },
-         isShowBtn:false 
+        'position': {
+          pageX: 0,
+          pageY: 0
+        },
+        isShowBtn: false
       })
     },
     //控制自定义组件

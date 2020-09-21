@@ -1,4 +1,3 @@
-
 //app.js
 App({
   onLaunch: function () {
@@ -14,12 +13,12 @@ App({
         traceUser: true,
       })
     }
-    let systemInfo={}
+    let systemInfo = {}
     // 获取手机系统信息
     wx.getSystemInfo({
       success: res => {
         console.log(res)
-        systemInfo=res
+        systemInfo = res
       },
       fail(err) {
         console.log(err);

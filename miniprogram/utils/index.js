@@ -18,22 +18,22 @@ const formatNumber = n => {
 const formatColor = (price) => {
   var colorStyle = ""
   switch (price) {
-       case 1:
-       case 5:
-            colorStyle = "dynamic-color1"
-            break;
-       case 10:
-       case 20:
-            colorStyle = "dynamic-color2"
-            break;
-       case 50:
-       case 100:
-            colorStyle = "dynamic-color3"
+    case 1:
+    case 5:
+      colorStyle = "dynamic-color1"
+      break;
+    case 10:
+    case 20:
+      colorStyle = "dynamic-color2"
+      break;
+    case 50:
+    case 100:
+      colorStyle = "dynamic-color3"
 
-            break;
-       default:
-            colorStyle = "dynamic-color1"
-            break;
+      break;
+    default:
+      colorStyle = "dynamic-color1"
+      break;
   }
   return colorStyle;
 }
