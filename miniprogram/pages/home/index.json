@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "top": "./../../components/top"
+    "top": "./../../components/Top",
+    "load-more": "./../../components/LoadMore"
   },
   "navigationBarTitleText": "小商店大全"
 }

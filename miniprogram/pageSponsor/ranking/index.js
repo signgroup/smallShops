@@ -3,7 +3,7 @@
 const app = getApp()
 const db = wx.cloud.database()
 import util from './../../utils/index'
-
+let skip = 0
 
 Page({
      data: {
@@ -17,8 +17,8 @@ Page({
           currentTab: 0,
           navScrollLeft: 0,
           sponsorData: [],
+          rankData: [],
           hiddenLoading: false, //loading是否隐藏
-          skip: 0, //数据从0开始
           limit: 20, //每页显示的条数
           num: 20,
           count: 0, //总条数
@@ -26,20 +26,10 @@ Page({
           triggered: false, //自定义下拉状态
      },
      //事件处理函数
-     onLoad() {
+     onLoad(params) {
           this.getSponsor()
-     },
+          this.getRankingData()
 
-     /**
-      * 页面上拉触底事件的处理函数
-      */
-     onReachBottom: function () {
-          console.log(this.data.skip);
-          console.log(!this.data.isLoad);
-          //判断是否有数据
-          if (!this.data.isLoad) {
-               this.getSponsor(this.data.skip, this.data.limit);
-          }
      },
      switchNav(event) {
           var cur = event.currentTarget.dataset.current;
@@ -59,24 +49,25 @@ Page({
      },
      //切换容器
      switchTab(e) {
-          var cur = e.detail.current;
-          var singleNavWidth = this.data.windowWidth / 2;
+          const cur = e.detail.current;
+          const singleNavWidth = this.data.windowWidth / 2;
           this.setData({
                currentTab: cur,
                navScrollLeft: (cur - 2) * singleNavWidth
           });
+
      },
      //获取赞赏数据
-     getSponsor() {
+     getSponsor: async function () {
+          wx.showNavigationBarLoading()
           let {
                num,
-               skip,
                limit,
                sponsorData
           } = this.data
           let _this = this
-          console.log('skip', skip)
-          db.collection('sponsor')
+          // console.log('skip', skip)
+          await db.collection('sponsor')
                .skip(skip)
                .limit(limit)
                .orderBy('timeStamp', 'desc')
@@ -92,8 +83,8 @@ Page({
                     })
                     //还有数据，继续
                     if (data.length == num) {
+                         skip = skip + num
                          this.setData({
-                              skip: skip + num,
                               isLoad: false,
                          })
                     } else {
@@ -108,9 +99,8 @@ Page({
                     } else {
                          sponsorData = list
                     }
-
                     console.log(sponsorData)
-
+                    wx.hideNavigationBarLoading()
                     _this.setData({
                          sponsorData,
                          triggered: false,
@@ -118,15 +108,80 @@ Page({
                     })
 
                })
+               .catch(err => {
+                    wx.hideNavigationBarLoading()
+                    _this.setData({
+                         triggered: false,
+                         hiddenLoading: true
+                    })
+               })
+     },
+     //获取排行榜数据
+     getRankingData() {
+          wx.showNavigationBarLoading()
+
+          const $ = db.command.aggregate
+          db
+               .collection('sponsor')
+               .aggregate()
+               .group({
+                    _id: '$openid',
+                    userInfo: $.first('$userInfo'),
+                    max_money: $.last('$money'),
+                    avg_money: $.avg('$money'),
+                    sum_money: $.sum('$money')
+               })
+               .sort({
+                    sum_money: -1
+               })
+               .end()
+               .then(res => {
+                    console.log(res)
+                    wx.hideNavigationBarLoading()
+                    this.setData({
+                         triggered: false,
+                         rankData: res.list
+                    })
+               })
+     },
+     goTop: function (e) { // 一键回到顶部
+          this.setData({
+               topNum: 0
+          });
+     },
+     //滚动时触发
+     scrolltoupper(e) {
+          // console.log(e)
+
+          /*
+          //此方法不推荐用，1秒内执行20次setData
+          this.setData({
+               topStatus: e.detail.scrollTop > 400
+          });
+          */
+          if (e.detail.scrollTop > 400) {
+               this.setData({
+                    topStatus: true
+               });
+          } else {
+               this.setData({
+                    topStatus: false
+               });
+          }
      },
      //自定义下拉刷新
      onAllRefresh() {
-          this.setData({
-               skip: 0,
-               sponsorData: [],
-               isLoad: true
-          });
-          this.getSponsor();
+          if (this.data.currentTab === 0) {
+               skip = 0
+               this.setData({
+                    sponsorData: [],
+                    isLoad: true
+               });
+               this.getSponsor();
+          } else if (this.data.currentTab === 1) {
+               this.getRankingData()
+          }
+
      },
      //自定义上拉加载
      allLoadMore(e) {

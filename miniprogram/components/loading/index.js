@@ -31,9 +31,10 @@ Component({
 
      },
      ready: function () {
-          console.log(this.properties)
-          console.log(typeof this.properties.hidden, this.properties.hidden)
-
+          /* 
+                    console.log(this.properties)
+                    console.log(typeof this.properties.hidden, this.properties.hidden)
+           */
           const _random = (num = 0) => {
                return Math.ceil(Math.random() * num)
           }

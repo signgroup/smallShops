@@ -3,8 +3,7 @@
           "pages/home/index",
           "pages/mine/index"
      ],
-     "subpackages": [
-          {
+     "subpackages": [{
                "root": "pageMine",
                "name": "pack1",
                "pages": [
@@ -32,8 +31,7 @@
           "selectedColor": "#f85c43",
           "borderStyle": "black",
           "backgroundColor": "#fff",
-          "list": [
-               {
+          "list": [{
                     "pagePath": "pages/home/index",
                     "text": "首页",
                     "iconPath": "images/tabbar/home.png",
@@ -55,7 +53,7 @@
           "backgroundColor": "#fff"
      },
      "usingComponents": {
-          "loading": "components/loading/index"
+          "loading": "components/Loading/index"
      },
      "sitemapLocation": "sitemap.json",
      "style": "v2"

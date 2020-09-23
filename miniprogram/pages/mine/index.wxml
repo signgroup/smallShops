@@ -5,9 +5,10 @@
 		<view class="login-box slide_up" style="top:{{statusBarHeight+58}}px">
 			<view class="head-portrait">
 				<!-- <image src="{{avatarUrl}}"></image> -->
-				<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+				<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar"
+					style="background-image: url({{avatarUrl}})"></button>
 			</view>
-			<text class="nickname" >{{logged?userInfo.nickName:'登录'}}</text>
+			<text class="nickname">{{logged?userInfo.nickName:'登录'}}</text>
 		</view>
 	</view>
 	<view></view>
@@ -15,17 +16,22 @@
 	<view class="card-menu">
 		<view class="menu-item arrow" data-name="visitor" bindtap="handelMenu">
 			<view class="content">
-				<image src="https://preview.cloud.189.cn/image/imageAction?param=DA25EEE5C366B877635395BA5A70F58D5A5220B4A39B83E5FBAB57CF014D7836CB91C013407F0F8A18D011005423A1828AD7DEE08578B972E0732A2D615A0AF4F71DF2C139B300AEF28C5A2EEF93AF0E87426A7E34E8567D8028BC9E"></image>
+				<image
+					src="https://preview.cloud.189.cn/image/imageAction?param=A3CE1595B932A0A1D15DFFB30D00463F3B159C27EE9FF88B0436D7BAD0939AE17D9082F117B1522B238361AB25183B7ECA2DE8F4DFBF7CFCB4E1B5823788DEA836F560008EBE9226B51C2078F8784A6DF141D08EA90BDDAC06E4B7A4">
+				</image>
 				<text>发布商店二维码</text>
 			</view>
 		</view>
 		<view class="menu-item " data-name="appreciation">
 			<view class="content">
-				<image src="https://preview.cloud.189.cn/image/imageAction?param=AD55B8F9FCEBF285258457F047AB1C1367F1226F06D7659420E9DBAF0D4948F4E0539B192DD89E74D2C541CDBD708536575A10F96BCBB8D6770AB6BDD317301AB4D54B4CCA47EC434DF490566E75D007C63BFDFBBE81D89C41EA6952"></image>
+				<image
+					src="https://preview.cloud.189.cn/image/imageAction?param=129EE467B90BD20113CF7F7D647725CADE28EA08C8183BEE81E0E398F2C3DF3BB3ECD80B5607E8E65C6DB4EE8BC4B905F579299ABD84CF165D603AEF368D4D7976B7022A95DB4B1A3242294E1CCA43AEE0E5E717B99069FCF705A3AF">
+				</image>
 				<text>刷新展示</text>
 			</view>
 			<view class="refresh">
-				<button wx:if="{{refreshStatus}}" class="btn-refresh" plain type="default" loading="{{refreshLoading}}" size="mini" :disabled="refreshDisabled" bindtap="handelRefresh">刷新</button> 
+				<button wx:if="{{refreshStatus}}" class="btn-refresh" plain type="default" loading="{{refreshLoading}}"
+					size="mini" :disabled="refreshDisabled" bindtap="handelRefresh">刷新</button>
 				<view class="count-down" wx:else>
 					{{countdown}}
 				</view>
@@ -36,8 +42,16 @@
 	<view class="card-menu">
 		<view class="menu-item arrow" data-name="appreciation" bindtap="handelMenu">
 			<view class="content">
-				<image src="https://preview.cloud.189.cn/image/imageAction?param=16026618A1933CD87A9DE03AEFC56C0856603CED6D97A50592245FE699A9583B40C81731DC26A377F25BD4E1BEDC7634F0BD5AE6A4FFD3413EC63971E1FF2175594D15FFC6445F225E87FBF4B0F87376FC302F7BD701F6BF06AEC05F"></image>
+				<image
+					src="https://preview.cloud.189.cn/image/imageAction?param=7C706792851962D484A2C80486D7B9433FEE7CF01F4982EFDF126C84F051ABBC7CF8E35F6631CAA9E5D6EC97FEE0ACCE89F0EA5B87B125B3E9F41AE2B89C87F5241516C01DD6EBD27CA6564ADE11215D44388D27700286B835443AF7">
+				</image>
 				<text>赞赏</text>
+			</view>
+		</view>
+		<view class="menu-item arrow"  data-name="appreciation" bindtap="joinGroup">
+			<view class="content">
+				<image src="https://preview.cloud.189.cn/image/imageAction?param=0E10B83688ACF51596E79D8BB4FAAD78505EE9CD34A8BF7A8AAE7E81799200082F40FA91DEF5988A2BEFEA9B2BB1674A60DAEF426E9A0056BE1E7050ED7AEBCDA43ABCD114981EA5C97DCB033EF009D68DCE55A24A766C6675000E56"></image>
+				<text>加入互动群</text>
 			</view>
 		</view>
 	</view>
@@ -45,14 +59,19 @@
 	<view class="card-menu" wx:if="{{logged}}">
 		<view class="menu-item arrow" bindtap="loginOut">
 			<view class="content">
-				<image src="https://preview.cloud.189.cn/image/imageAction?param=EB0EB91EEC2FC1A3086475FA952D1EE793559A2AF9F2FED557B543FDDDF541AA0424D36DA2CFB7BC597103D31C52C312F560510FF6F27978D5BE3053B21A84459E915B7F5D631EC5D1027EF89A72CD37CABE0AD9222BB7AA67016E71"></image>
+				<image
+					src="https://preview.cloud.189.cn/image/imageAction?param=07C4344426F7B4471799F5409FCA0B670EDBA1E86293B67AACD5BD41E04BE9AC1DEB2939F021D6E509E2E404F0C3A2168779B4C3486A77E5B9BE4B2405CCE329A4AA359E06B68E8C7FD51672E9EF58863C8AEE68CEE9DCE0F4D60D7B">
+				</image>
 				<text>退出</text>
 			</view>
 		</view>
 
-		<view class="menu-item arrow" data-name="manage" bindtap="handelMenu" wx:if="{{openid==='ooWgd5DUlhyvvI51GjoBukzgYxAs'}}">
+		<view class="menu-item arrow" data-name="manage" bindtap="handelMenu"
+			wx:if="{{openid==='o-U5f5SXWpfNkegkTCIMTqHcNrCQ'}}">
 			<view class="content">
-				<image src="https://preview.cloud.189.cn/image/imageAction?param=884D8AA6E777FF44C7E5015D7740EFAE05DE2E181B09515EF04B573CEFC917017F63950C4011149BD46C54D7D216FF390827356A5962E71139F9FFFCECAF631F2B548CD59E1EC10B4E313B61225C22D2A5284E12A46A5D960928DEA8"></image>
+				<image
+					src="https://preview.cloud.189.cn/image/imageAction?param=3E70E7220BD1F2A9C54332A994C6862DE8BF9435A5D5A9AC4326C32F70A2ED0560CD9C35796C564A153E43FE84F37E813C61B7D3683DB87F3322DA710A8274F80A4BBD1615C4AAC0E656EDAF3FAE410B9056175F728CECE10FF9FDF0">
+				</image>
 				<text>管理</text>
 			</view>
 		</view>

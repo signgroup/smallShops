@@ -13,7 +13,6 @@ exports.main = async (event, context) => {
           ...event.params,
           update_date: new Date().getTime(),
      }
-
      try {
           return await db.collection('shops').where({
                     openId: wxContext.OPENID,

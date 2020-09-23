@@ -36,9 +36,11 @@ Page({
   onPageScroll: function (e) {
     // console.log(e)
     if (e.scrollTop > 400) {
-      this.setData({
-        topStatus: true
-      });
+      if (!this.data.topStatus) {
+        this.setData({
+             topStatus: true
+        });
+   }
     } else {
       this.setData({
         topStatus: false
@@ -110,7 +112,10 @@ Page({
     if (index === 0) {
       this.handleDelete(item._id, item.cloud)
     } else if (index === 1) {
-      this.setBlacklist({...item.userInfo,openId:item.openId})
+      this.setBlacklist({
+        ...item.userInfo,
+        openId: item.openId
+      })
 
     }
 
@@ -144,7 +149,7 @@ Page({
         .catch((err) => {
           console.log(res)
           wx.showToast({
-            title: '添加失败'+err,
+            title: '添加失败' + err,
           })
         })
     }
@@ -238,7 +243,7 @@ Page({
   },
   //获取人员列表
   getShopList(skip, limit, search) {
-
+    wx.showNavigationBarLoading()
     wx.cloud.callFunction({
         name: 'getSearch',
         data: {
@@ -270,7 +275,6 @@ Page({
              下拉赋可下拉
         */
         this.setData({
-          btnDisabled: false,
           downRefresh: false
         })
         wx.setNavigationBarTitle({
@@ -306,13 +310,14 @@ Page({
           hiddenLoading: true
         })
         wx.hideLoading()
+        wx.hideNavigationBarLoading()
+
         console.log('shopData', this.data.shopData)
       })
       .catch(res => {
         wx.hideLoading()
-
-        console.log(res)
-
+        wx.hideNavigationBarLoading()
+        console.error(res)
       })
   },
   //获取搜索input内容

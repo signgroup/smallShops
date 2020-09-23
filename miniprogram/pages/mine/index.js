@@ -19,7 +19,6 @@ Page({
     countdown: '', //倒计时时间
     refreshStatus: false, //true可刷新，false不可刷新
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -56,34 +55,11 @@ Page({
       })
       this.addEditUsers(app.globalData.userInfo)
     }
-
-
     // this.onGetOpenid()
     console.log(app.globalData)
-
     this.getReleaseId()
 
   },
-
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
@@ -91,28 +67,6 @@ Page({
   onUnload: function () {
     this.clearTimer()
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
   // 用户授权登录
   onGetUserInfo: function (e) {
     console.log(e)
@@ -155,7 +109,6 @@ Page({
         console.log(err)
       })
   },
-
   // 退出登录
   loginOut() {
     var _this = this
@@ -184,7 +137,6 @@ Page({
       })
     }
   },
-
   //获取发布内容
   getReleaseId() {
 
@@ -199,7 +151,6 @@ Page({
         name: 'getReleaseId'
       })
       .then(res => {
-
         let {
           result
         } = res
@@ -209,8 +160,6 @@ Page({
           //计算倒计时
           console.log(result.next_refresh)
           if (result.next_refresh > 0) {
-
-
             let timer = setInterval(() => {
               const countdown = countDown(result.next_refresh--)
               // console.log(countdown);
@@ -226,16 +175,13 @@ Page({
                   timer
                 })
               }
-
             }, 1000);
-
           } else {
             //可刷新
             this.setData({
               refreshStatus: true
             })
           }
-
         } else {
           //未发布过
           this.setData({
@@ -252,13 +198,11 @@ Page({
         })
       })
   },
-
   //清空倒计时
   clearTimer() {
     clearInterval(this.data.timer)
   },
   //按钮刷新
-
   handelRefresh() {
     this.setData({
       refreshLoading: true,
@@ -307,7 +251,13 @@ Page({
         }
       })
   },
-
+  //加入群
+  joinGroup() {
+    wx.previewImage({
+      urls: ['http://13s.top/other/shop/qrcode.jpg'],
+      current: 'http://13s.top/other/shop/qrcode.jpg' // 当前显示图片的http链接      
+    })
+  },
   //点击菜单栏
   handelMenu(e) {
     let {

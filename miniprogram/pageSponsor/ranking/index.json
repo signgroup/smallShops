@@ -1,6 +1,10 @@
 {
   "navigationBarTitleText": "赞赏记录",
-  "usingComponents": {},
+  "usingComponents": {
+    "top": "./../../components/Top",
+    "load-more": "./../../components/LoadMore"
+
+  },
   "enablePullDownRefresh": false
 
 }

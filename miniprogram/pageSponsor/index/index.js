@@ -3,7 +3,8 @@ const db = wx.cloud.database()
 Page({
   data: {
     logo: 'http://iph.href.lu/200x200?fg=666666&bg=cccccc',
-    title: '全栈生姜头',
+    title: '全栈90后',
+    desc: '赞赏是最好的支持',
     prices: [
       1, 5, 10, 20, 50, 100
     ],
@@ -14,6 +15,7 @@ Page({
    * 进入页面
    */
   onLoad: function () {
+
     this.getSponsor()
   },
 
@@ -102,6 +104,7 @@ Page({
       money,
       userInfo: wx.getStorageSync('userInfo')
     }
+
     wx.cloud.callFunction({
         name: "addSponsor",
         data: {

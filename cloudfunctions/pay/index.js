@@ -22,7 +22,6 @@ const config = {
 exports.main = async(event, context) =>{
     const wxContext = cloud.getWXContext()
     let {
-        orderid,
         money
     } = event;
     //3，初始化支付
@@ -30,7 +29,7 @@ exports.main = async(event, context) =>{
 
     let result = await
     api.getPayParams({
-        out_trade_no: orderid,
+        out_trade_no: Date.now(),
         body: '商品简单描述',
         total_fee: money, //订单金额(分),
         openid: wxContext.OPENID //付款用户的openid

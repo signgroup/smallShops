@@ -11,7 +11,10 @@
 				<image src="{{item.cloud}}" class="item-img"></image>
 				<view class="item-box">
 					<view class="ellipsis-1 item-title">{{item.title}}</view>
-					<view class="item-time">{{item.cycleTime}}</view>
+					<view class="item-time">
+						<text>{{item.cycleTime}}</text>
+						<text>{{item.count}}</text>
+					</view>
 				</view>
 			</view>
 		</view>

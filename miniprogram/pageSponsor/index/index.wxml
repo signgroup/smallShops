@@ -5,7 +5,7 @@
 		<view class="group">
 			<image src="{{logo}}"  mode="aspectFill"/>
 			<text class="name">{{title}}</text>
-			<text class="leading">赞赏是最好的支持</text>
+			<text class="leading">{{desc}}</text>
 		</view>
 		<navigator class="ranking"  url="./../ranking/index">
 			<text>赞赏记录</text>

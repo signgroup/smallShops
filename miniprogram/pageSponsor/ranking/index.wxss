@@ -7,7 +7,6 @@ page {
 .container {
      width: 100%;
      height: 100%;
-
 }
 
 .nav {
@@ -56,7 +55,9 @@ page {
      box-sizing: border-box;
 }
 
-.scroll-view-box{height: 100%;}
+.scroll-view-box {
+     height: 100%;
+}
 
 .flex-row {
      display: flex;
@@ -72,7 +73,6 @@ page {
      height: 120rpx;
      border-radius: 50%;
      background-color: #eee;
-
 }
 
 .price {
@@ -112,7 +112,6 @@ page {
      display: flex;
      align-items: center;
      justify-content: center;
-
 }
 
 .ranking rich-text {
@@ -124,7 +123,7 @@ page {
 
 .dynamic {
      background-color: #fff;
-     padding: 20rpx 30rpx;
+     padding: 0 30rpx;
      margin-top: 20rpx;
 }
 
@@ -149,7 +148,6 @@ page {
      top: 40rpx;
      left: 30rpx;
      z-index: 1;
-
 }
 
 .dynamic-item:last-child .dynamic-avatar::after {
@@ -157,12 +155,11 @@ page {
 }
 
 .dynamic-avatar .avatar {
-     width: 60rpx;
-     height: 60rpx;
+     width: 64rpx;
+     height: 64rpx;
      z-index: 10;
      position: relative;
      background-color: #eee;
-
 }
 
 .dynamic-text {

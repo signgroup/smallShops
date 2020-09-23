@@ -16,9 +16,10 @@ Page({
           _id: '', //接收id
           form: {
                title: '',
-               introduce: '',
-               wechat: ''
-          }
+               appId: ''
+          },
+          modal: false,
+
      },
 
      /**
@@ -80,6 +81,7 @@ Page({
      },
      //获取发布内容
      getReleaseId() {
+          wx.showNavigationBarLoading()
           wx.cloud.callFunction({
                     name: 'getReleaseId'
                })
@@ -91,8 +93,7 @@ Page({
                     if (Object.keys(result).length) {
                          let form = {
                               title: result.title,
-                              wechat: result.wechat,
-                              introduce: result.introduce
+                              appId: result.appId
                          }
                          this.setData({
                               form,
@@ -104,12 +105,14 @@ Page({
                     this.setData({
                          hiddenLoading: true,
                     })
-
+                    wx.hideNavigationBarLoading()
                })
                .catch(() => {
                     this.setData({
                          hiddenLoading: true
                     })
+                    wx.hideNavigationBarLoading()
+
                })
      },
 
@@ -119,11 +122,11 @@ Page({
                type
           } = e.currentTarget.dataset
           this.data.form[type] = e.detail.value
-          if (type === "introduce") {
+          /* if (type === "introduce") {
                this.setData({
                     textNum: e.detail.value.length
                })
-          }
+          } */
           this.setData({
                form: this.data.form
           })
@@ -188,6 +191,13 @@ Page({
                })
                flag = false
           }
+          if (!this.data.form.appId) {
+               wx.showToast({
+                    icon: 'none',
+                    title: '请输入小程序AppID'
+               })
+               flag = false
+          }
           return flag
      },
      //提交-添加图片
@@ -249,7 +259,7 @@ Page({
                     ...this.data.form
                }
                this.setData({
-                    addLoading:true
+                    addLoading: true
                })
                //如果重新上传图片，添加cloud
                if (this.data.iconCamera.startsWith("http://tmp/")) {
@@ -257,7 +267,6 @@ Page({
                     console.log('fileID', fileID)
                     params.cloud = fileID
                }
-
                wx.cloud.callFunction({
                          name: 'updateRelease',
                          data: {
@@ -271,7 +280,7 @@ Page({
                               title: '更新成功！'
                          })
                          this.setData({
-                              addLoading:false
+                              addLoading: false
                          })
                          console.log('updateRelease res', res.result)
                     })
@@ -288,6 +297,7 @@ Page({
                cloud: fileID,
                openId: wx.getStorageSync('openId'),
                userInfo: wx.getStorageSync('userInfo'),
+               count: 0
           }
           console.log('params', params)
 
@@ -401,5 +411,11 @@ Page({
                .then(res => {
                     console.log(res)
                })
-     }
+     },
+//弹框
+     handelModal(){
+          this.setData({
+               modal:!this.data.modal
+          })
+     },
 })

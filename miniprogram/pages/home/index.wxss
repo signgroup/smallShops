@@ -1,7 +1,8 @@
 /* miniprogram/pages/home/index.wxss */
 .container {
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-top: 70rpx;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .search-bar {
@@ -16,7 +17,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
   z-index: 90;
 
 }
@@ -33,18 +34,20 @@
 .search-bar-input {
   width: 100%;
   height: 70rpx;
+  font-size: 32rpx;
+  padding-left: 10rpx;
 }
 
 .product-list {
-  margin-top: 20rpx;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-
+  padding-top: 20rpx;
+  position: relative;
 }
 
 .product-item {
-  width: 345rpx;
+  width: 365rpx;
   background-color: #fff;
   border-radius: 20rpx;
   margin-bottom: 20rpx;
@@ -54,12 +57,11 @@
 
 .product-item:nth-child(2n-1) {
   margin-right: 20rpx;
-
 }
 
 .product-image {
-
-  height: 345rpx;
+  width:100%;
+  height: 365rpx;
 }
 
 .product-text {
@@ -71,7 +73,19 @@
   font-size: 32rpx;
 }
 
-.product-time {
+.product-row-text {
+  display: flex;
+  justify-content: space-between;
   color: #999;
   font-size: 24rpx;
+}
+.scroll-view-box {
+  position: fixed;
+  height:100%;
+  top: 70rpx;
+  padding-bottom: 70rpx;
+}
+
+load-more {
+  width: 100%;
 }

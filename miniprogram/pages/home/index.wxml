@@ -2,19 +2,36 @@
 	<!--header-->
 	<view class="search-bar">
 		<icon class="icon-search" type="search" size="22"></icon>
-		<input type="text" class="search-bar-input" placeholder="请输入搜索内容"  value="{{searchVal}}" confirm-type="search" bindinput='searchInput' bindconfirm='btnSearch' />
+		<input type="text" class="search-bar-input" placeholder="请输入搜索内容" value="{{searchVal}}" confirm-type="search"
+			bindinput='searchInput' bindconfirm='btnSearch' />
 	</view>
-	<view class="product-list">
-		<view class="product-item" wx:for="{{shopData}}" wx-for:item="item" wx:for-index="index" wx:key="_id">
-			<image class="product-image" lazy-load mode="aspectFill" src="{{item.cloud}}"></image>
-			<view class="product-text">
-				<!-- <text class="ellipsis-1 product-title">{{item.title}}</text> -->
-				<rich-text  class="ellipsis-1 product-title" nodes="{{item.title}}"></rich-text>
-				<text class="product-time">{{item.cycleTime}}</text>
-			</view>
+	<scroll-view scroll-y="true" class="scroll-view-box" bindscrolltolower="allLoadMore" scroll-with-animation
+		refresher-enabled="{{true}}" refresher-threshold="{{80}}" lower-threshold="{{100}}" enable-back-to-top="{{true}}"
+		bindscroll="scrolltoupper" scroll-top='{{topNum}}' refresher-default-style="black" refresher-background="#fff"
+		refresher-triggered="{{triggered}}" bindrefresherrefresh="onAllRefresh">
+		<view class="product-list">
+			<block wx:for="{{shopData}}" wx-for:item="item" wx:for-index="index" wx:key="_id">
+				<view class="product-item" data-item="{{item}}" data-index="{{index}}" bindtap="ToMiniProgram">
+					<image class="product-image" lazy-load mode="aspectFill" src="{{item.cloud}}"></image>
+					<view class="product-text">
+						<!-- <text class="ellipsis-1 product-title">{{item.title}}</text> -->
+						<rich-text class="ellipsis-1 product-title" nodes="{{item.title}}"></rich-text>
+						<view class="product-row-text">
+							<text class="product-time">{{item.cycleTime}}</text>
+							<text class="product-pv">PV:{{item.count?item.count:0}}次</text>
+						</view>
+					</view>
+				</view>
+			</block>
 		</view>
-	</view>
-	<!-- 返回顶部 -->
-	<top topStatus="{{topStatus}}" />
+		<block wx:if="{{shopData.length}}">
+			<load-more status="{{!isLoad}}" />
+		</block>
+
+	</scroll-view>
+	<block wx:if="{{shopData.length}}">
+		<!-- 返回顶部 -->
+		<top topStatus="{{topStatus}}" bindtap="goTop" />
+	</block>
 </view>
 <loading hidden="{{hiddenLoading}}" />

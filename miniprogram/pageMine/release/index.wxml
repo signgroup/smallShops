@@ -4,7 +4,8 @@
 	<view class="list-cell">
 		<view class="line-cell">
 			<view class="cell-title">标题：</view>
-			<input placeholder-class="phcolor" class="cell-input" bindinput='bindTextArea' value="{{form.title}}" data-type="title" placeholder="请输入小商店名称(必填)" maxlength="50" type="text" />
+			<input placeholder-class="phcolor" class="cell-input" bindinput='bindTextArea' value="{{form.title}}"
+				data-type="title" placeholder="请输入小商店名称(必填)" maxlength="50" type="text" />
 		</view>
 
 		<view class="line-cell">
@@ -15,32 +16,60 @@
 				<image class="{{!cloudPath?'icon-add':''}}" src="{{iconCamera}}" mode="aspectFill" />
 			</view>
 		</view>
-		<view class="line-cell">
+		<!-- <view class="line-cell">
 			<view class="cell-title">介绍：</view>
 			<view class="cell-input  mes-cell">
-				<textarea class="mes-textarea" bindinput='bindTextArea' data-type="introduce" value='{{form.introduce}}' placeholder="主营商品介绍(选填)" style="height: 6.3em" bindconfirm="showTopTips" />
+				<textarea wx:if="{{hiddenLoading}}" class="mes-textarea" bindinput='bindTextArea' data-type="introduce"
+					value='{{form.introduce}}' placeholder="主营商品介绍(选填)" style="height: 6.3em" bindconfirm="showTopTips" />
 				<text class='text-num'>{{textNum}}/140</text>
                 </view>
-		</view>
-          <view class="line-cell">
-			<view class="cell-title">微信号：</view>
-			<input placeholder-class="phcolor" class="cell-input"  bindinput='bindTextArea' value='{{form.wechat}}' data-type="wechat" placeholder="微信号(选填)" maxlength="30" type="text" />
+		</view> -->
+		<view class="line-cell">
+			<view class="cell-title">AppID：</view>
+			<input placeholder-class="phcolor" class="cell-input" bindinput='bindTextArea' value='{{form.appId}}'
+				data-type="appId" placeholder="请输入小商店AppID" maxlength="30" type="text" />
 		</view>
 	</view>
-     <view class="tip">
-          <text>友情提示：发布小商店二维码永久免费，请放心使用。避免无限刷新，每个账号每天最多可以发布一次，请谨慎操作！请勿发布与小商店无关的二维码，一经发现将禁止发布！</text>
-     </view>
-         <view class="flex-button">
-          <button type="primary" wx:if="{{_id}}"  loading="{{addLoading}}" bindtap="updateRelease" disabled="{{addLoading}}">
-              更新
-          </button>
-          <button type="primary" wx:else loading="{{addLoading}}" bindtap="handleConfirm" disabled="{{addLoading}}">
-               保存
-          </button>
-          <button type="warn"   bindtap="handleDelete" disabled="{{_id?false:true}}">删除</button>
-     </view>
+	<view class="tip">
+		<text>友情提示：发布小商店二维码永久免费，请放心使用。避免无限刷新，每个账号每天最多可以发布一次，请谨慎操作！请勿发布与小商店无关的二维码，一经发现将禁止发布！</text>
+	</view>
+	<view class="guide">
+		<text bindtap="handelModal">查看指引</text>
+	</view>
+	<view class="flex-button">
+		<button type="primary" wx:if="{{_id}}" loading="{{addLoading}}" bindtap="updateRelease" disabled="{{addLoading}}">
+			更新
+		</button>
+		<button type="primary" wx:else loading="{{addLoading}}" bindtap="handleConfirm" disabled="{{addLoading}}">
+			保存
+		</button>
+		<button type="warn" bindtap="handleDelete" disabled="{{_id?false:true}}">删除</button>
+	</view>
 </view>
-
-
-
+<view class="modal">
+	<view class="modal-mask {{modal?'modal-show':''}} "></view>
+	<view class="modal-box  {{modal?'modal-show':''}} modal-normal">
+		<view class="modal-content">
+			<view>
+				个人小商店：
+			</view>
+			<view>
+				二维码：小商店助手-首页右上角“分享店”
+			</view>
+			<view>
+				AppID：小商店助手-我的-店铺信息-AppID
+			</view>
+			<view>
+				企业小商店：
+			</view>
+			<view>
+				二维码：首页-扫码进店-下载店铺码（选择第一项8cm）
+			</view>
+			<view>
+				AppID：店铺管理-基本信息-AppID
+			</view>
+		</view>
+		<button type="primary" size="mimi" plain="true" bindtap="handelModal">知道了</button>
+	</view>
+</view>
 <loading hidden="{{hiddenLoading}}" />
