@@ -34,6 +34,9 @@ Page({
    * 选中赞赏金额
    */
   requestPayment(e) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let {
       money
     } = e.currentTarget.dataset
@@ -69,6 +72,7 @@ Page({
   },
   //实现小程序支付
   pay(payData, money) {
+    console.log('谁进了')
     //官方标准的支付方法
     let _this = this
     wx.requestPayment({
@@ -99,12 +103,12 @@ Page({
   },
   //添加赞助记录
   addSponsor(timeStamp, money) {
+    console.log('谁进了')
     let params = {
       timeStamp,
       money,
       userInfo: wx.getStorageSync('userInfo')
     }
-
     wx.cloud.callFunction({
         name: "addSponsor",
         data: {
@@ -120,7 +124,10 @@ Page({
   //监听数据导航
   getSponsor: async function () {
     wx.showNavigationBarLoading()
-    await db.collection('sponsor').count().then(res => {
+    const _ = db.command
+    await db.collection('sponsor').where({
+      money: _.exists(true)
+    }).count().then(res => {
       console.log(res.total)
       let {
         total

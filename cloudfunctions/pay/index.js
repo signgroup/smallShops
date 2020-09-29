@@ -1,6 +1,3 @@
-
-
-  
 //云开发实现支付
 const cloud = require('wx-server-sdk')
 // 初始化 cloud

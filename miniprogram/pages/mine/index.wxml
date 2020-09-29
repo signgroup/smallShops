@@ -48,9 +48,11 @@
 				<text>赞赏</text>
 			</view>
 		</view>
-		<view class="menu-item arrow"  data-name="appreciation" bindtap="joinGroup">
+		<view class="menu-item arrow" data-name="appreciation" bindtap="joinGroup">
 			<view class="content">
-				<image src="https://preview.cloud.189.cn/image/imageAction?param=0E10B83688ACF51596E79D8BB4FAAD78505EE9CD34A8BF7A8AAE7E81799200082F40FA91DEF5988A2BEFEA9B2BB1674A60DAEF426E9A0056BE1E7050ED7AEBCDA43ABCD114981EA5C97DCB033EF009D68DCE55A24A766C6675000E56"></image>
+				<image
+					src="https://preview.cloud.189.cn/image/imageAction?param=0E10B83688ACF51596E79D8BB4FAAD78505EE9CD34A8BF7A8AAE7E81799200082F40FA91DEF5988A2BEFEA9B2BB1674A60DAEF426E9A0056BE1E7050ED7AEBCDA43ABCD114981EA5C97DCB033EF009D68DCE55A24A766C6675000E56">
+				</image>
 				<text>加入互动群</text>
 			</view>
 		</view>

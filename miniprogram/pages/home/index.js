@@ -170,6 +170,24 @@ Page({
 
                })
      },
+     //图片懒加载
+     onLazyLoad(e) {
+          // console.log(e)
+          const {
+               index
+          } = e.currentTarget.dataset
+          let {
+               shopData
+          } = this.data
+          if (e.detail.width) {
+               shopData[index].load = true
+               setTimeout(() => {
+                    this.setData({
+                         shopData
+                    })
+               }, 300);
+          }
+     },
      //获取搜索input内容
      searchInput(e) {
           let val = e.detail.value.trim();

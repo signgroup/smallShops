@@ -55,7 +55,6 @@ Page({
                currentTab: cur,
                navScrollLeft: (cur - 2) * singleNavWidth
           });
-
      },
      //获取赞赏数据
      getSponsor: async function () {
@@ -106,7 +105,6 @@ Page({
                          triggered: false,
                          hiddenLoading: true
                     })
-
                })
                .catch(err => {
                     wx.hideNavigationBarLoading()
@@ -126,10 +124,10 @@ Page({
                .aggregate()
                .group({
                     _id: '$openid',
-                    userInfo: $.first('$userInfo'),
-                    max_money: $.last('$money'),
-                    avg_money: $.avg('$money'),
-                    sum_money: $.sum('$money')
+                    userInfo: $.last('$userInfo'),
+                    max_money: $.max('$money') ? $.max('$money') : 0,
+                    avg_money: $.avg('$money') ? $.avg('$money') : 0,
+                    sum_money: $.sum('$money') ? $.sum('$money') : 0
                })
                .sort({
                     sum_money: -1
