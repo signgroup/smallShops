@@ -35,8 +35,8 @@
 				</view>
 			</block>
 		</view>
-		<block wx:if="{{shopData.length}}">
-			<load-more status="{{!isLoad}}" />
+		<block wx:if="{{shopData.length>=20}}">
+			<load-more  status="{{!isLoad}}" />
 		</block>
 
 	</scroll-view>

@@ -69,7 +69,7 @@
 		</view>
 
 		<view class="menu-item arrow" data-name="manage" bindtap="handelMenu"
-			wx:if="{{openid==='o-U5f5SXWpfNkegkTCIMTqHcNrCQ'}}">
+			wx:if="{{openid==='ojL1u5VYHmCZOPOhAARUU73wB-fQ'}}">
 			<view class="content">
 				<image
 					src="https://preview.cloud.189.cn/image/imageAction?param=3E70E7220BD1F2A9C54332A994C6862DE8BF9435A5D5A9AC4326C32F70A2ED0560CD9C35796C564A153E43FE84F37E813C61B7D3683DB87F3322DA710A8274F80A4BBD1615C4AAC0E656EDAF3FAE410B9056175F728CECE10FF9FDF0">

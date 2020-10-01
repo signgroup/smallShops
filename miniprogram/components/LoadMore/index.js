@@ -14,7 +14,8 @@ Component({
     status:{
       type: Boolean,
       value: true
-    }
+    },
+    
   },
 
   /**

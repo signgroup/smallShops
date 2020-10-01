@@ -9,7 +9,7 @@ cloud.init({
 const tenpay = require('tenpay');
 //2，配置支付信息
 const config = {
-  appid: 'wx810481485d1c215c', 
+  appid: 'wx958910aa567900ea', 
   mchid: '1602627254',
   partnerKey: 'YC67Jhaok7Tt7TnMAOzULQSVQyOtTRA9', 
   notify_url: 'http://uni.13s.top', 
@@ -28,7 +28,7 @@ exports.main = async(event, context) =>{
     api.getPayParams({
         out_trade_no: Date.now(),
         body: '商品简单描述',
-        total_fee: money, //订单金额(分),
+        total_fee: money*100, //订单金额(分),
         openid: wxContext.OPENID //付款用户的openid
     });
     return result;

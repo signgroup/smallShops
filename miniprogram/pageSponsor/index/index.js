@@ -2,8 +2,8 @@ const app = getApp();
 const db = wx.cloud.database()
 Page({
   data: {
-    logo: 'http://iph.href.lu/200x200?fg=666666&bg=cccccc',
-    title: '全栈90后',
+    logo: 'https://preview.cloud.189.cn/image/imageAction?param=71A546679CF46AC3BEEFF33C1B11CA43313841FA53C9B98D1CFF2AC4F8B9E6322235CC41717E252C290BBA5648CD016A1CDA56F7B877B9BECC9ABD33D2B220CD3004D587ECEB91CF3263FC15C1A90AB70CACC13582DF909695417E6B',
+    title: '众商小店',
     desc: '赞赏是最好的支持',
     prices: [
       1, 5, 10, 20, 50, 100
