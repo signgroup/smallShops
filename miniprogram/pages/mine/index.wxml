@@ -1,8 +1,8 @@
 <view class="screen">
 	<!-- 登录开始 -->
-	<view class="head-bg-box ">
-		<view class="head-bg "></view>
-		<view class="login-box slide_up" style="top:{{statusBarHeight+58}}px">
+	<view class="head-bg-box " style="height:{{statusBarHeight+400}}rpx">
+		<view class="head-bg " style="height:{{statusBarHeight+400}}rpx"></view>
+		<view class="login-box slide_up" style="top:{{statusBarHeight+140}}rpx">
 			<view class="head-portrait">
 				<!-- <image src="{{avatarUrl}}"></image> -->
 				<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar"
@@ -11,10 +11,9 @@
 			<text class="nickname">{{logged?userInfo.nickName:'登录'}}</text>
 		</view>
 	</view>
-	<view></view>
 	<!-- 登录结束 -->
 	<view class="card-menu">
-		<view class="menu-item arrow" data-name="visitor" bindtap="handelMenu">
+		<view class="menu-item arrow" hidden="{{releaseState}}" data-name="visitor" bindtap="handelMenu">
 			<view class="content">
 				<image
 					src="https://preview.cloud.189.cn/image/imageAction?param=A3CE1595B932A0A1D15DFFB30D00463F3B159C27EE9FF88B0436D7BAD0939AE17D9082F117B1522B238361AB25183B7ECA2DE8F4DFBF7CFCB4E1B5823788DEA836F560008EBE9226B51C2078F8784A6DF141D08EA90BDDAC06E4B7A4">

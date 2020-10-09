@@ -28,7 +28,11 @@
 			<view class="cell-title">AppID：</view>
 			<input placeholder-class="phcolor" class="cell-input" bindinput='bindTextArea' value='{{form.appId}}'
 				data-type="appId" placeholder="请输入小商店AppID" maxlength="30" type="text" />
+				<view class="preview" bindtap="ToMiniProgram">预览</view>
 		</view>
+	</view>
+	<view class="tip">
+		<text>发布前点击预览，查看跳转是否正常，不能正常跳转请检查AppID是否正确！</text>
 	</view>
 	<view class="tip">
 		<text>友情提示：发布小商店二维码永久免费，请放心使用。避免无限刷新，每个账号每天最多可以发布一次，请谨慎操作！请勿发布与小商店无关的二维码，一经发现将禁止发布！</text>

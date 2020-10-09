@@ -98,6 +98,7 @@ Page({
         // {errMsg: "requestPayment:ok"}
         // {errMsg: "requestPayment:fail cancel"}
         console.log("支付完成", res)
+        wx.hideLoading()
       }
     })
   },

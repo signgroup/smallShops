@@ -18,6 +18,7 @@ Page({
     refreshDisabled: false, //按钮点击状态
     countdown: '', //倒计时时间
     refreshStatus: false, //true可刷新，false不可刷新
+    releaseState: false, //发布按钮状态
   },
   /**
    * 生命周期函数--监听页面加载
@@ -57,7 +58,7 @@ Page({
     }
     // this.onGetOpenid()
     console.log(app.globalData)
-    this.getReleaseId()
+    this.getData()
 
   },
 
@@ -137,16 +138,38 @@ Page({
       })
     }
   },
+  getData: async function () {
+    await this.getReleaseId()
+    await this.getJurisdiction()
+  },
+  //获取发布按钮状态
+  getJurisdiction() {
+    db.collection('jurisdiction')
+      .get()
+      .then(res => {
+        let {
+          data
+        } = res
+        console.log(data)
+        this.setData({
+          releaseState: data[0].state,
+          hiddenLoading: true
+        })
+      })
+      .catch(() => {
+        this.setData({
+          hiddenLoading: true
+        })
+      })
+  },
   //获取发布内容
   getReleaseId() {
-
     //返回倒计时计算
     const countDown = (second) => {
       const s = second % 60;
       const m = Math.floor(second / 60);
       return `${`00${m}`.slice(-2)}:${`00${s}`.slice(-2)}`;
     };
-
     wx.cloud.callFunction({
         name: 'getReleaseId'
       })
@@ -155,7 +178,6 @@ Page({
           result
         } = res
         console.log('result', result)
-
         if (Object.keys(result).length) {
           //计算倒计时
           console.log(result.next_refresh)
@@ -188,9 +210,6 @@ Page({
             refreshDisabled: true
           })
         }
-        this.setData({
-          hiddenLoading: true,
-        })
       })
       .catch(() => {
         this.setData({
@@ -253,9 +272,10 @@ Page({
   },
   //加入群
   joinGroup() {
+    const url = `http://13s.top/other/shop/qrcode.jpg?t=${Date.now()}`
     wx.previewImage({
-      urls: ['http://13s.top/other/shop/qrcode.jpg'],
-      current: 'http://13s.top/other/shop/qrcode.jpg' // 当前显示图片的http链接      
+      urls: [url],
+      current: url // 当前显示图片的http链接      
     })
   },
   //点击菜单栏

@@ -151,6 +151,13 @@
 .modal-content {
      font-size: 26rpx;
 }
-.modal-content  view{
+
+.modal-content view {
      margin-bottom: 20rpx;
+}
+
+.preview {
+     width: 120rpx;
+     height: 100%;
+     text-align: center;
 }

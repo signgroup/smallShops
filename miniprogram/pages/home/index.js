@@ -19,6 +19,7 @@ Page({
      },
 
      /**
+      * 
       * 生命周期函数--监听页面加载
       */
      onLoad() {
@@ -129,7 +130,7 @@ Page({
                          isLoad: res.data.length != this.data.num
                     })
                     wx.setNavigationBarTitle({
-                         title: `小商店大全(${count.total})`
+                         title: `众商小店(${count.total})`
                     })
                     let list = res.data.map(item => {
                          let searchStr = search.trim()

@@ -412,10 +412,17 @@ Page({
                     console.log(res)
                })
      },
-//弹框
-     handelModal(){
+     //弹框
+     handelModal() {
           this.setData({
-               modal:!this.data.modal
+               modal: !this.data.modal
+          })
+     },
+     //跳转小程序
+     ToMiniProgram(e) {
+          wx.navigateToMiniProgram({
+               appId: this.data.form.appId,
+               envVersion: 'release'
           })
      },
 })
