@@ -27,6 +27,7 @@ Page({
      },
      //事件处理函数
      onLoad(params) {
+          skip = 0
           this.getSponsor()
           this.getRankingData()
 

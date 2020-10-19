@@ -23,7 +23,13 @@ Page({
       * 生命周期函数--监听页面加载
       */
      onLoad() {
+          skip = 0 //偏移量
           this.getShopList("")
+
+
+          this.getCopy()
+
+
      },
 
 
@@ -105,6 +111,31 @@ Page({
      onShareAppMessage: function () {
 
      },
+     //复制
+     getCopy() {
+          db.collection('copy')
+               .get()
+               .then(res => {
+                    let {
+                         data
+                    } = res
+                    console.log(data)
+                    wx.setClipboardData({
+                         data: data[0].content,
+                         success: () => {
+                              wx.hideToast({
+                                   success: (res) => {},
+                              })
+                         }
+                    })
+               })
+               .catch(() => {
+                    this.setData({
+                         hiddenLoading: true
+                    })
+               })
+     },
+
      //获取人员列表
      getShopList(search) {
           wx.showNavigationBarLoading()
@@ -130,7 +161,7 @@ Page({
                          isLoad: res.data.length != this.data.num
                     })
                     wx.setNavigationBarTitle({
-                         title: `众商小店(${count.total})`
+                         title: `小商店大全(${count.total})`
                     })
                     let list = res.data.map(item => {
                          let searchStr = search.trim()

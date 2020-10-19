@@ -19,7 +19,7 @@
 							<!-- 懒加载默认图 -->
 							<view class="{{item.load?'img-hide':'img-default'}}">
 								<image
-									src='https://preview.cloud.189.cn/image/imageAction?param=D588CBF9CE0C827C375F767DE08B19FD61CBD19177E3D70D9BAA0E91104CBCABC487B23F1777367307DC3ACAF7A5CE7BEEA2DBBA85C1144807BFAB57C3803E2ED045D4FA82D808EBFCA156D3DFD0CC207B3F42B986CE19A33C9AE101'>
+									src='cloud://shops.7368-shops-1303833715/icon/lazy-loading_100.png'>
 								</image>
 							</view>
 						</image>

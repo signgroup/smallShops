@@ -11,6 +11,13 @@
                ]
           },
           {
+               "root": "pageManage",
+               "name": "pack2",
+               "pages": [
+                    "release/index"
+               ]
+          },
+          {
                "root": "pageSponsor",
                "name": "pack3",
                "pages": [

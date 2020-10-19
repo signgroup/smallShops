@@ -6,7 +6,7 @@ Page({
       */
      data: {
           textNum: 0, //文字数量
-          iconCamera: "https://preview.cloud.189.cn/image/imageAction?param=EE4233288D15AF1089C3F6A5FA2C285C6D3B9C0A98167643F0234C88E4BDAE834953033C308EFBB5103F12F4E7A77B9E2F915D8DC8E77DF4CBF801D47063AA9292BABC576320B083F878A836E7CFE22C99B48ECF6DD7250ABD7E6BC5",
+          iconCamera: "cloud://shops.7368-shops-1303833715/icon/icon-add.png",
           hiddenLoading: false, //loading状态
           filePath: "", //临时路径
           cloudPath: "", //图片名称
@@ -362,7 +362,7 @@ Page({
                               this.setData({
                                    form: {},
                                    _id: '',
-                                   iconCamera: "https://preview.cloud.189.cn/image/imageAction?param=EE4233288D15AF1089C3F6A5FA2C285C6D3B9C0A98167643F0234C88E4BDAE834953033C308EFBB5103F12F4E7A77B9E2F915D8DC8E77DF4CBF801D47063AA9292BABC576320B083F878A836E7CFE22C99B48ECF6DD7250ABD7E6BC5",
+                                   iconCamera: "cloud://shops.7368-shops-1303833715/icon/icon-add.png",
                                    filePath: "", //临时路径
                                    cloudPath: "", //图片名称
                                    addLoading: false, //添加修改loading

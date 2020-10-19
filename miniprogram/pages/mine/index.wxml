@@ -16,7 +16,7 @@
 		<view class="menu-item arrow" hidden="{{releaseState}}" data-name="visitor" bindtap="handelMenu">
 			<view class="content">
 				<image
-					src="https://preview.cloud.189.cn/image/imageAction?param=A3CE1595B932A0A1D15DFFB30D00463F3B159C27EE9FF88B0436D7BAD0939AE17D9082F117B1522B238361AB25183B7ECA2DE8F4DFBF7CFCB4E1B5823788DEA836F560008EBE9226B51C2078F8784A6DF141D08EA90BDDAC06E4B7A4">
+					src="cloud://shops.7368-shops-1303833715/icon/icon-my1.png">
 				</image>
 				<text>发布商店二维码</text>
 			</view>
@@ -24,7 +24,7 @@
 		<view class="menu-item " data-name="appreciation">
 			<view class="content">
 				<image
-					src="https://preview.cloud.189.cn/image/imageAction?param=3FF05D6A801372D555DF82C65D106ED8ACB1A2797CF7E340CB840AECA7E7090B8CBEC3618D285AE2309D50A5D6324BF259D8D48A81CA92959EEA47C33E1675D7580BCDC3230D2E53EC9C7AE49B7BA94D59EFA51F3DCCE4D2215F6E80">
+					src="cloud://shops.7368-shops-1303833715/icon/icon-my2.png">
 				</image>
 				<text>刷新展示</text>
 			</view>
@@ -42,7 +42,7 @@
 		<view class="menu-item arrow" data-name="appreciation" bindtap="handelMenu">
 			<view class="content">
 				<image
-					src="https://preview.cloud.189.cn/image/imageAction?param=7C706792851962D484A2C80486D7B9433FEE7CF01F4982EFDF126C84F051ABBC7CF8E35F6631CAA9E5D6EC97FEE0ACCE89F0EA5B87B125B3E9F41AE2B89C87F5241516C01DD6EBD27CA6564ADE11215D44388D27700286B835443AF7">
+					src="cloud://shops.7368-shops-1303833715/icon/icon-my3.png">
 				</image>
 				<text>赞赏</text>
 			</view>
@@ -50,7 +50,7 @@
 		<view class="menu-item arrow" data-name="appreciation" bindtap="joinGroup">
 			<view class="content">
 				<image
-					src="https://preview.cloud.189.cn/image/imageAction?param=0E10B83688ACF51596E79D8BB4FAAD78505EE9CD34A8BF7A8AAE7E81799200082F40FA91DEF5988A2BEFEA9B2BB1674A60DAEF426E9A0056BE1E7050ED7AEBCDA43ABCD114981EA5C97DCB033EF009D68DCE55A24A766C6675000E56">
+					src="cloud://shops.7368-shops-1303833715/icon/icon-my4.png">
 				</image>
 				<text>加入互动群</text>
 			</view>
@@ -61,7 +61,7 @@
 		<view class="menu-item arrow" bindtap="loginOut">
 			<view class="content">
 				<image
-					src="https://preview.cloud.189.cn/image/imageAction?param=07C4344426F7B4471799F5409FCA0B670EDBA1E86293B67AACD5BD41E04BE9AC1DEB2939F021D6E509E2E404F0C3A2168779B4C3486A77E5B9BE4B2405CCE329A4AA359E06B68E8C7FD51672E9EF58863C8AEE68CEE9DCE0F4D60D7B">
+					src="cloud://shops.7368-shops-1303833715/icon/icon-my5.png">
 				</image>
 				<text>退出</text>
 			</view>
@@ -71,7 +71,7 @@
 			wx:if="{{openid==='ojL1u5VYHmCZOPOhAARUU73wB-fQ'}}">
 			<view class="content">
 				<image
-					src="https://preview.cloud.189.cn/image/imageAction?param=3E70E7220BD1F2A9C54332A994C6862DE8BF9435A5D5A9AC4326C32F70A2ED0560CD9C35796C564A153E43FE84F37E813C61B7D3683DB87F3322DA710A8274F80A4BBD1615C4AAC0E656EDAF3FAE410B9056175F728CECE10FF9FDF0">
+					src="cloud://shops.7368-shops-1303833715/icon/icon-my6.png">
 				</image>
 				<text>管理</text>
 			</view>

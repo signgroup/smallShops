@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    avatarUrl: 'https://preview.cloud.189.cn/image/imageAction?param=730EA27C97E83C7ACDB7575A38AA9C6FA3CECAC1437A8DF9FB006BF60320B765E1BFCE5A0EDBBC8E0356A21FCC271DF97020FF184B2F6348891DADBCC1E1068BAFF564A0797BD5865CB4EB8DD31253D5E987BCFF2020275725661CFA', //默认头像
+    avatarUrl: './../../images/icon-avatar.png', //默认头像
     hiddenLoading: false, //loading是否隐藏
     userInfo: {}, //用户信息
     logged: false, //授权记录
@@ -272,7 +272,7 @@ Page({
   },
   //加入群
   joinGroup() {
-    const url = `http://13s.top/other/shop/qrcode.jpg?t=${Date.now()}`
+    const url = `http://13s.top/other/shop/qrcode.png?t=${Date.now()}`
     wx.previewImage({
       urls: [url],
       current: url // 当前显示图片的http链接      
